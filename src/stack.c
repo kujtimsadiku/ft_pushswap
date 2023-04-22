@@ -2,18 +2,29 @@
 
 void	ReverseRotate(t_stack *stack)
 {
-
+	if (stack->size <= 1)
+		return ;
+	size_t i = stack->size - 1;
+	while (i)
+	{
+		int tmp = stack->stack[i - 1];
+		stack->stack[i - 1] = stack->stack[i];
+		stack->stack[i] = tmp;
+		i--;
+	}
 }
 
+
+// Shifts everything by one. last element becomes the first element
 void	Rotate(t_stack *stack)
 {
 	if (stack->size <= 1)
 		return ;
-	while (i < stack->size)
+	for (int i = 0; i < stack->size; i++)
 	{
 		int tmp = stack->stack[i + 1];
-
-		i++;
+		stack->stack[i + 1] = stack->stack[i];
+		stack->stack[i] = tmp;
 	}
 }
 
