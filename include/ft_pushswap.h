@@ -1,9 +1,10 @@
 # ifndef FT_PUSHSWAP_H
 	# define FT_PUSHSWAP_H
 		# include "../libft/includes/libft.h"
-		# include "include/stack.h"
+		# include "stack.h"
 		# include <sys/types.h>
     	# include <sys/uio.h>
+		# include <stdio.h>
 
 		# define sa
 		# define sb
@@ -21,6 +22,6 @@
 			int		*stack;
 			int		top;
 			size_t	size;
-		}					t_stack;
+		}					m_stack;
 
 #endif
