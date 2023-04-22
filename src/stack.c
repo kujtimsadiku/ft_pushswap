@@ -48,20 +48,27 @@ void	Swap(t_stack *stack)
 // 	return (TRUE);
 // }
 
-// void	Push(t_stack *stack, t_stack *insert)
-// {
+static void	InitTopAndSize(t_stack *inserted, t_stack *removed)
+{
+	inserted->size += 1; 
+	inserted->top += 1;
+	removed->size -= 1;
+	removed->top -= 1;
+}
 
-// 	if (insert->size != 0) 
-// 	{
-// 		stack->stack[size] = insert->stack[0];
-// 		stack->size += 1;
-// 	}
-// 	else
-// 		return ;
-// 	/**
-// 	 * takes void * and checks sizeof(ptr[0])
-// 	 * with this we can check if it is int the return of byte will be 4
-// 	 * char it will be 1
-// 	 * we then can typecast it
-// 	 */
-// }
+void	Push(t_stack *insert, t_stack *remove)
+{
+	if (remove->size != 0) 
+	{
+		insert->stack[insert->top + 1] = remove->stack[remove->top];
+		InitTopAndSize(insert, remove);
+	}
+	else
+		return ;
+	/**
+	 * takes void * and checks sizeof(ptr[0])
+	 * with this we can check if it is int the return of byte will be 4
+	 * char it will be 1
+	 * we then can typecast it
+	 */
+}

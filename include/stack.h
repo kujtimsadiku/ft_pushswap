@@ -12,4 +12,6 @@
 		void	Swap(t_stack *stack);
 		void	Rotate(t_stack *stack);
 		void	ReverseRotate(t_stack *stack);
+		void	Push(t_stack *stack, t_stack *insert);
+		
 # endif
