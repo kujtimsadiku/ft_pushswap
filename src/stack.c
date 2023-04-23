@@ -1,5 +1,8 @@
 #include "../include/stack.h"
 
+t_stack stackA = {NULL, -1, 0};
+t_stack stackB = {NULL, -1, 0};
+
 void	ReverseRotate(t_stack *stack)
 {
 	if (stack->size <= 1)
@@ -50,10 +53,16 @@ void	Swap(t_stack *stack)
 
 static void	InitTopAndSize(t_stack *inserted, t_stack *removed, ...)
 {
-	inserted->size += 1; 
-	inserted->top += 1;
-	removed->size -= 1;
-	removed->top -= 1;
+	if (inserted != NULL)
+	{
+		inserted->size += 1; 
+		inserted->top += 1;
+	}
+	if (removed != NULL)
+	{
+		removed->size -= 1;
+		removed->top -= 1;
+	}
 }
 
 void	Pop(t_stack *popOut)
@@ -72,12 +81,4 @@ void	Push(t_stack *insert, t_stack *remove)
 	}
 	else
 		return ;
-	// InitTopAndSize(insert, remove);
-
-	/**
-	 * takes void * and checks sizeof(ptr[0])
-	 * with this we can check if it is int the return of byte will be 4
-	 * char it will be 1
-	 * we then can typecast it
-	 */
 }

@@ -1,10 +1,10 @@
 # ifndef FT_PUSHSWAP_H
 	# define FT_PUSHSWAP_H
 		# include "../libft/includes/libft.h"
-		# include "stack.h"
 		# include <sys/types.h>
     	# include <sys/uio.h>
 		# include <stdio.h>
+		# include "stack.h"
 
 		// Action 
 		# define sa	"sa"
@@ -22,10 +22,14 @@
 		# define TRUE 1
 		# define FALSE 0
 
-		// Function define to be get easy access and more secure
+		// Function order defined to be get easy access and more secure
+		// Trying to implement c++ stack way.
 		# define PUSH 0
 		# define SWAP 1
 		# define ROTATE 2
 		# define REVERSEROTATE 3
-		
+		# define POP 4
+
+		void	shift(t_stack *stack);
+
 #endif

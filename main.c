@@ -1,12 +1,12 @@
 #include "include/ft_pushswap.h"
 #include <stdio.h>
-#include "include/stack.h"
 
 Function_Global Stack[] = {
     (Function_Global)Push,
     (Function_Global)Swap,
     (Function_Global)Rotate,
-    (Function_Global)ReverseRotate
+    (Function_Global)ReverseRotate,
+	(Function_Global)Pop
 };
 // small test will be made here 
 // to be sure the functions work as they need to
@@ -19,12 +19,12 @@ int main() {
 
 	// size_t length = sizeof(array) / sizeof(array[0]) - 1;
 	size_t length = 5;
-	t_stack data = {
-		.stack = array, 
-		.top = length - 1, 
-		.size = length
-	};
-	t_stack data2 = {
+
+	stackA.stack = array; 
+	stackA.top = length - 1;
+	stackA.size = length;
+	
+	t_stack stackB = {
 		.stack = arrayB,
 		.top = length - 1, 
 		.size = length
@@ -34,17 +34,17 @@ int main() {
 		.top = length - 1, 
 		.size = length
 	};
-	// shift(&data3);
-	Stack[PUSH](&data, &data2);
-	Stack[PUSH](&data, &data2);
-	Stack[PUSH](&data, &data2);
-	Stack[PUSH](&data, &data2);
-	Stack[PUSH](&data, &data2);
-	Stack[ROTATE](&data, NULL);
+	shift(NULL);
+	// Stack[PUSH](&stackA, &stackB);
+	// Stack[PUSH](&stackA, &stackB);
+	// Stack[PUSH](&stackA, &stackB);
+	// Stack[PUSH](&stackA, &stackB);
+	// Stack[PUSH](&stackA, &stackB);
+	// Stack[ROTATE](&stackA, NULL);
 	int i = 0;
-	while (i < data.size)
+	while (i < stackA.size)
 	{
-		printf("%d", data.stack[i]);
+		printf("%d", stackA.stack[i]);
 		i++;
 	}
 	// i = 0;

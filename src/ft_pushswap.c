@@ -1,8 +1,7 @@
 #include "../include/ft_pushswap.h"
-#include "../include/stack.h"
 
 void	shift(t_stack *stack)
 {
-		Stack[SWAP](stack);
-		
+	stackA.stack[0] = 6;
+	Stack[SWAP](&stackA, NULL);
 }
