@@ -21,7 +21,7 @@ void	Rotate(t_stack *stack)
 	if (stack->size <= 1)
 		return ;
 	int	i = 0;
-	while (i < stack->size)
+	while (i < stack->size - 1)
 	{
 		int tmp = stack->stack[i + 1];
 		stack->stack[i + 1] = stack->stack[i];
@@ -48,12 +48,19 @@ void	Swap(t_stack *stack)
 // 	return (TRUE);
 // }
 
-static void	InitTopAndSize(t_stack *inserted, t_stack *removed)
+static void	InitTopAndSize(t_stack *inserted, t_stack *removed, ...)
 {
 	inserted->size += 1; 
 	inserted->top += 1;
 	removed->size -= 1;
 	removed->top -= 1;
+}
+
+void	Pop(t_stack *popOut)
+{
+	// will pop the top element (last) and will free it
+	free(&popOut->stack[popOut->top]);
+	InitTopAndSize(NULL, popOut);
 }
 
 void	Push(t_stack *insert, t_stack *remove)
@@ -65,6 +72,8 @@ void	Push(t_stack *insert, t_stack *remove)
 	}
 	else
 		return ;
+	// InitTopAndSize(insert, remove);
+
 	/**
 	 * takes void * and checks sizeof(ptr[0])
 	 * with this we can check if it is int the return of byte will be 4
