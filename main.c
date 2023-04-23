@@ -1,18 +1,11 @@
 #include "include/ft_pushswap.h"
 #include <stdio.h>
 
-Function_Global Stack[] = {
-    (Function_Global)Push,
-    (Function_Global)Swap,
-    (Function_Global)Rotate,
-    (Function_Global)ReverseRotate,
-	(Function_Global)Pop
-};
 // small test will be made here 
 // to be sure the functions work as they need to
 // Using -g flags while compiling to debug with lldb.
 
-int main() {
+int main(int ac, char **av) {
 	int array[10] = {1,2,3,4,5};
 	int arrayB[5] = {9,8,7,6,5};
 	int arrayC[5] = {9,8,7,6,5};
@@ -23,7 +16,7 @@ int main() {
 	stackA.stack = array; 
 	stackA.top = length - 1;
 	stackA.size = length;
-	
+
 	t_stack stackB = {
 		.stack = arrayB,
 		.top = length - 1, 
@@ -34,7 +27,7 @@ int main() {
 		.top = length - 1, 
 		.size = length
 	};
-	shift(NULL);
+	// shift(NULL);
 	// Stack[PUSH](&stackA, &stackB);
 	// Stack[PUSH](&stackA, &stackB);
 	// Stack[PUSH](&stackA, &stackB);

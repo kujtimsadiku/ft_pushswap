@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksadiku <ksadiku@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksadiku <kuite.s@hotmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:16:21 by ksadiku           #+#    #+#             */
-/*   Updated: 2022/05/16 15:50:41 by ksadiku          ###   ########.fr       */
+/*   Updated: 2023/04/23 18:34:33 by ksadiku          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	*ft_memmove(void *dest, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	ft_bzero(void *s, size_t n);
-int		ft_atoi(const char *str);
+long long		ft_atoi(const char *str);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_isalnum(int c);

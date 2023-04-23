@@ -3,6 +3,14 @@
 t_stack stackA = {NULL, -1, 0};
 t_stack stackB = {NULL, -1, 0};
 
+GLOBAL_STACK Stack[] = {
+    (GLOBAL_STACK)Push,
+    (GLOBAL_STACK)Swap,
+    (GLOBAL_STACK)Rotate,
+    (GLOBAL_STACK)ReverseRotate,
+	(GLOBAL_STACK)Pop
+};
+
 void	ReverseRotate(t_stack *stack)
 {
 	if (stack->size <= 1)
@@ -43,13 +51,11 @@ void	Swap(t_stack *stack)
 	stack->stack[stack->top - 1] = tmp;
 }
 
-// int		IsEmpty(int *stack)
-// {
-// 	int end = sizeof(stack) / sizeof(stack[0]) - 1;
-	
-// 	return (FALSE)
-// 	return (TRUE);
-// }
+bool	IsEmpty(int *full)
+{
+	bool empty = *full == -1 ? true : false;
+	return (empty);
+}
 
 static void	InitTopAndSize(t_stack *inserted, t_stack *removed, ...)
 {

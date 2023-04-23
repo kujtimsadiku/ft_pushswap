@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksadiku <ksadiku@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksadiku <kuite.s@hotmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 14:50:29 by ksadiku           #+#    #+#             */
-/*   Updated: 2022/05/16 15:40:06 by ksadiku          ###   ########.fr       */
+/*   Updated: 2023/04/23 18:34:07 by ksadiku          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static	int	ft_atoi_neg(char *num, int i, int ttrue, int tfalse)
 		return (ttrue);
 }
 
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
 	int				i;
 	unsigned long	res;
